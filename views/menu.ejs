@@ -1,0 +1,51 @@
+<!-- views/menu.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Menu</title>
+  </head>
+
+  <body>
+    <div class="content-box">
+      <%- include('./partials/nav') %> 
+      <%- include('./partials/breadcrumb', {
+      category: "Full Menu" }) %>
+
+<div class="content-box full-menu">
+      <h1>Full Menu</h1>
+      
+         <h2>Mains</h2>
+        <% menu.forEach(item => { %> <% if (item.category === 'mains') { %>
+          <h3><%= item.name %> - $<%= item.price.toFixed(2) %></h3>
+          <p>
+            Rating: <%= item.rating %>/5 <% if (item.rating === 5) { %> ⭐ <% }
+            %>
+          </p>
+          <p><%= item.details %></p>
+        <% } }) %>
+      
+        <h2>Desserts</h2>
+      <% menu.forEach(item => { %> <% if (item.category === 'desserts') { %>
+        <h3><%= item.name %> - $<%= item.price.toFixed(2) %></h3>
+        <p>
+          Rating: <%= item.rating %>/5 <% if (item.rating === 5) { %> ⭐ <% } %>
+        </p>
+        <p><%= item.details %></p>
+     
+      <% } }) %>
+  
+      
+        <h2>Sides</h2>
+      <% menu.forEach(item => { %> <% if (item.category === 'sides') { %>
+        <h3><%= item.name %> - $<%= item.price.toFixed(2) %></h3>
+        <p>
+          Rating: <%= item.rating %>/5 <% if (item.rating === 5) { %> ⭐ <% } %>
+        </p>
+        <p><%= item.details %></p>
+      <% } }) %>
+    </div>
+  </body>
+</html>

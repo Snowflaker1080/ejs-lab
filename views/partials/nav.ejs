@@ -1,0 +1,22 @@
+<!-- views/partials/nav.ejs -->
+  <nav class="main-nav">
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links"></div>
+    <a href="/">Home</a>
+    <a href="/menu">Full Menu</a>
+    <a href="/menu/mains">Mains</a>
+    <a href="/menu/desserts">Desserts</a>
+    <a href="/menu/sides">Sides</a>
+  </nav>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  });
+</script>
+
