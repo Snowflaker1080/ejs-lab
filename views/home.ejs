@@ -10,7 +10,7 @@
   <body class="home-page">
  <div class="content-box">
    <%- include('./partials/nav') %>
-   <%- include('./partials/breadcrumb', { category: "Home" }) %>
+   <%- include('./partials/breadcrumb', { Category: 'Home', isHome: true }) %>
   
     <h1>Welcome to <%= restaurant.name %></h1>
     <div class="contact-info">
